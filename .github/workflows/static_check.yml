@@ -36,7 +36,7 @@ jobs:
     - name: secure
       run: |
         go get github.com/securego/gosec/cmd/gosec
-        bash -x scripts/travis/goSecureChecker.sh
+        bash -x scripts/ci/goSecureChecker.sh
     - name: UT
       run: |
         go test $(go list ./... |  grep -v third_party | grep -v examples) -cover -covermode atomic -coverprofile coverage.out
